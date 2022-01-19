@@ -12,3 +12,20 @@
       4 1 4
       2 2 2
 """
+
+# 가장 큰 값을 가져와야 하기 때문에 변수로 잡음
+max_num = 0
+# n, m 값 입력받기
+n, m = map(int, input().split())
+# n(행)만큼 돌리기
+for i in range(n):
+    # 한 줄 입력받기
+    row = list(map(int, input().split()))
+    # 그 줄의 제일 작은 값 찾기
+    min_num = min(row)
+    # 그 줄의 제일 큰 값 찾기 첫 번째 : 1(0 1) / 1(1 1)/ 2(1 2)
+    max_num = max(max_num, min_num)
+
+print(max_num)
+
+
