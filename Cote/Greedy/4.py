@@ -25,14 +25,16 @@ def one():
     # while True:
     #     if n//k==1 and n%k==0:
     #         count+=1
-    #         print(count)
+    #         print("if : ", count)
     #         break
     #     elif n%k==0:
     #         n//=k
     #         count+=1
+    #         print("elif :", count)
     #     else:
     #         n-=1
     #         count+=1
+    #         # print("else :", count)
 
 if __name__ == "__main__":
     one()

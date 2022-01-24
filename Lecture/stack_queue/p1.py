@@ -1,5 +1,6 @@
 # s "[]()"
 # s "{{{}"
+# 1~ 4주차 https://teamsparta.notion.site/1-4-d8484618ebd240ec855067e468fb35af
 from collections import deque
 
 
