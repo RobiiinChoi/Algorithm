@@ -1,5 +1,6 @@
 from Lecture.tree.structures import TreeNode
-
+# 9회 https://teamsparta.notion.site/9-1-44fae036478f44d1b274769e0d9cc94c
+# 10회 https://teamsparta.notion.site/10-2-bfd3123f0dc44859ab9d3f618a314157
 
 def make_tree_by(lst, idx):
     parent = None
