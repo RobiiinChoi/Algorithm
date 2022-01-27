@@ -22,8 +22,8 @@ def recur(num):
         print(' '.join(map(str, rs)))
         return
     for i in range(1, N+1):
-         if chk[i]==False:
-            chk[i]==True
+         if chk[i] == False:
+            chk[i] = True
             rs.append(i)
             recur(num+1)
             chk[i]=False

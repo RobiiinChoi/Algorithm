@@ -20,7 +20,7 @@ def bfs(x,y):
     if graph[x][y]==1: # 값이 1이면 리턴 False
         return False
 
-    while q: # q가 차있으면
+    while q: # (0,0) 위치를 기준으로 bfs탐색
         x, y = q.popleft() # x, y 값 큐에서 빼서 1로 변경시킴 (재방문 x)
         graph[x][y]=1
         for i in range(4): # 4방향으로 돌기
