@@ -3,6 +3,7 @@ class Node:
     def __init__(self, item, next):
         self.item = item
         self.next = next
+
 # 스택 구현
 class Stack:
     def __init__(self):
