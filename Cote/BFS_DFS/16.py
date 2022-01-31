@@ -19,8 +19,10 @@
 3. 자료구조 - 너비우선, 브루트포스, 그래프
 '''
 import copy
+import sys
 from collections import deque
 
+input = sys.stdin.readline
 
 # bfs 탐색
 def bfs():
