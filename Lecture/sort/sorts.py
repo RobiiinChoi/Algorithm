@@ -70,8 +70,53 @@ def quicksort(lst, start, end):
         if start >= end:
             return None
 
-    # 
+    #
     p = partition(lst, start, end)
     quicksort(lst, start, p - 1)
     quicksort(lst, p + 1, end)
     return lst
+
+# 머지소트의 머지부분 구현
+def merge(arr1, arr2):
+    # 구현할 어레이 외에 하나 더 빈 리스트를 만든다(머지할 리스트 변수)
+    result = []
+    # i, j로 각 배열의 포인터 변수를 만들고 0으로 설정
+    i = j = 0
+    # i의 포인터가 전체보다 작고 j의 포인터가 전체보다 작을 때 (아직 머지할 원소들이 남았을 때)
+    while i < len(arr1) and j < len(arr2):
+        # 각 배열에서 더 작은 값을 병합하는 과정
+        # arr1이 arr2보다 작을 때 result에 arr1을 붙이고 포인터를 1 올린다
+        if arr1[i] < arr2[j]:
+            result.append(arr1[i])
+            i += 1
+        # 반대의 경우 arr2를 result에 붙이고 포인터를 1 올린다
+        else:
+            result.append(arr2[j])
+            j +=1
+
+    # i의 값이 arr1 길이보다 작을 때 (위의 병합정렬에서 이 케이스는 arr2가 먼저 다 result안에 들어간 경우)
+    while i < len(arr1):
+        # 마찬가지로 arr1의 원소를 result로 어펜드하고 포인터를 1 올린다
+        result.append(arr1[i])
+        i+=1
+
+    # j의 값이 arr2 길이보다 작을 때( arr1이 다 들어감)
+    while j < len(arr2):
+        # arr2의 원소를 어펜드하고 포인터 1올린다
+        result.append(arr2[j])
+        j+=1
+
+    return result
+
+# 머지 소트 (머지 전 나누는 부분 구현)
+def mergesort(lst):
+    # 리스트 길이가 1일 때는 그냥 리스트 리턴 (정렬할 게 없다)
+    if len(lst)<=1:
+        return lst
+
+    # 리스트를 반으로 나눈 인덱스를 mid라는 포인트로 지정하고 미드를 기준으로 오른쪽 왼쪽 부분을 나눈다 (정렬 나누는 과정)
+    mid = len(lst)//2
+    L = lst[:mid]
+    R = lst[mid:]
+
+    return merge(mergesort(L), mergesort(R))
