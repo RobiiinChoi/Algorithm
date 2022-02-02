@@ -26,7 +26,7 @@ def dfs_recursive(node, visited):
     return visited
 
 # # 스택
-# def dfs_stack(start):
+# def dfs_stack(start):x
 #     visited = []
 #     # 방문할 순서를 담아두는 용도
 #     stack = [start]

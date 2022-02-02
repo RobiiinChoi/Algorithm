@@ -32,8 +32,8 @@ def bfs(x,y):
 
 # 아이스크림 개수
 count = 0
-for i in range(N):
-    for j in range(M):
+for i in range(N): #index 0
+    for j in range(M): # index 0
         if bfs(i, j) == True:
             count += 1 # 아이스크림 1개가 만들어질 경우 True 리턴 -> 1 추가
 
