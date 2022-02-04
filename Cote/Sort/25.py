@@ -16,3 +16,14 @@
 
 '''
 
+def solution(N, stages):
+    answer = {}
+    bunmo=len(stages)
+    for stage in range(1, N+1):
+        if bunmo != 0:
+            count = stages.count(stage)
+            answer[stage] = count/bunmo
+            bunmo -= count
+        else:
+            answer[stage] = 0
+    return sorted(answer, key=lambda x: answer[x], reverse = True)

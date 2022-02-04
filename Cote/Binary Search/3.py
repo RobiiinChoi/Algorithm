@@ -24,13 +24,15 @@ while start<= end:
     mid = (start+end)//2
     for i in array:
         if i>mid:
-            total += i - mid # 궁금한 부분 : mid 보다 작은 i 역시 total에 합쳐야되는데 해당떡은 어디감? A : 자른 것만 파는 거
+            total += i - mid
     if total<m:
         end = mid-1
     else:
         h = mid
         start = mid +1
 print(h)
+
+
 
 """
 " 떡볶이 떡 만들기 "
@@ -65,44 +67,44 @@ sum(stack)이 M보다 작다면 end = mid - 1
 sum(stack)이 M보다 크다면 end = start + 1
 sum(stack)이 M과 같다면 정답!
 """
-
-# n, m = map(int, input().split())
-n, m = 4, 6
-print(n, m)
-# array = list(map(int, input().split()))
-array = [19, 15, 10, 17]
-print(array)
-
-start = 0
-end = max(array)
-
-result = 0
-
-while start <= end:
-    print('*' * 30)
-    print("while 시작!")
-    mid = (start + end) // 2
-    print(f"{mid} 만큼 자를꺼야!")
-    stack = []
-    for i in range(len(array)):
-        cut = array[i] - mid
-        if cut <= 0:
-            continue
-        else:
-            stack.append(cut)
-        i += 1
-    print("스택 :", stack)
-    tsum = sum(stack)
-    print("합계 : ",tsum)
-    if tsum == m:
-        print(f'{m}이랑 똑같넹!')
-        result = mid
-        break
-    elif tsum > m:
-        start = mid + 1
-        print(f"{m} 보다 크다!")
-    else:
-        end = mid - 1
-        print(f"{m} 보다 작다!")
-
-print("정답!!",result)
+#
+# # n, m = map(int, input().split())
+# n, m = 4, 6
+# print(n, m)
+# # array = list(map(int, input().split()))
+# array = [19, 15, 10, 17]
+# print(array)
+#
+# start = 0
+# end = max(array)
+#
+# result = 0
+#
+# while start <= end:
+#     print('*' * 30)
+#     print("while 시작!")
+#     mid = (start + end) // 2
+#     print(f"{mid} 만큼 자를꺼야!")
+#     stack = []
+#     for i in range(len(array)):
+#         cut = array[i] - mid
+#         if cut <= 0:
+#             continue
+#         else:
+#             stack.append(cut)
+#         i += 1
+#     print("스택 :", stack)
+#     tsum = sum(stack)
+#     print("합계 : ",tsum)
+#     if tsum == m:
+#         print(f'{m}이랑 똑같넹!')
+#         result = mid
+#         break
+#     elif tsum > m:
+#         start = mid + 1
+#         print(f"{m} 보다 크다!")
+#     else:
+#         end = mid - 1
+#         print(f"{m} 보다 작다!")
+#
+# print("정답!!",result)
