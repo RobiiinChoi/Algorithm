@@ -16,6 +16,7 @@
 
 '''
 
+
 def solution(N, stages):
     answer = {}
     bunmo=len(stages)
@@ -26,4 +27,6 @@ def solution(N, stages):
             bunmo -= count
         else:
             answer[stage] = 0
-    return sorted(answer, key=lambda x: answer[x], reverse = True)
+    return sorted(answer, key=lambda x: (-answer[x], x))
+
+s = solution()
