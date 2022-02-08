@@ -1,6 +1,6 @@
 import sys
 
-from Cote.Dijkstra.structure import dijkstra_naive, dijkstra_pq
+from Lecture.Dijkstra.structure import dijkstra_naive, dijkstra_pq
 
 with open('testcase1.txt') as f:
     sys.stdin = f
